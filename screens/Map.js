@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import MapView from 'react-native-maps';
 
-const Map = () => {
+const Map = ({navigator}) => {
   return (
     <MapView
       initialRegion={{
@@ -12,13 +12,27 @@ const Map = () => {
         longitudeDelta: 0.0421,
       }} 
       style={styles.map}
-    />
+    >
+      <TouchableOpacity style={styles.menu} onPress={() => {
+        navigator.toggleDrawer();  
+      }}>
+      </TouchableOpacity>
+    </MapView>
   );
 };
 
 const styles = StyleSheet.create({
   map: {
     flex: 1,
+  },
+  menu: {
+    position: 'absolute',
+    top: 20,
+    left: 10,
+    padding: 10,
+    width: 40,
+    height: 40,
+    backgroundColor: '#000000',
   },
 });
 
