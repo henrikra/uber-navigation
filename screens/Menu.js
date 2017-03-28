@@ -1,5 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+
+const links = [
+  {label: 'Maksutavat'},
+  {label: 'Matkat'},
+  {label: 'Ilmaiset kyydit'},
+  {label: 'Ohjeet'},
+  {label: 'Asetukset'},
+];
 
 const Menu = () => {
   return (
@@ -7,6 +15,15 @@ const Menu = () => {
       <View style={styles.header}>
         <View style={styles.avatar} />
         <Text style={styles.name}>Henrik Raitasola</Text>
+      </View>
+      <View style={styles.links}>
+        {links.map((link, index) => {
+          return (
+            <TouchableOpacity key={index} style={styles.link}>
+              <Text style={styles.linkLabel}>{link.label}</Text>
+            </TouchableOpacity>
+          );
+        })}
       </View>
     </View>
   );
@@ -30,6 +47,17 @@ const styles = StyleSheet.create({
   name: {
     color: '#ffffff',
     fontSize: 16,
+  },
+  links: {
+    paddingVertical: 25,
+  },
+  link: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  linkLabel: {
+    fontSize: 18,
+    fontWeight: '300',
   },
 });
 
