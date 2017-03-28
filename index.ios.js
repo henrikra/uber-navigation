@@ -1,5 +1,19 @@
-import {AppRegistry} from 'react-native';
+import { Navigation } from 'react-native-navigation';
 
-import App from './src/components/App';
+import { registerScreens } from './screens';
+registerScreens();
 
-AppRegistry.registerComponent('uberNavigation', () => App);
+Navigation.startTabBasedApp({
+  tabs: [
+    {
+      label: 'One',
+      screen: 'example.FirstTabScreen',
+      title: 'Screen One'
+    },
+    {
+      label: 'Two',
+      screen: 'example.SecondTabScreen',
+      title: 'Screen Two'
+    }
+  ]
+});
