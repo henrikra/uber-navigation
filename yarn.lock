@@ -2891,6 +2891,10 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
+react-native-maps@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.13.1.tgz#ed2a7e62f155a51f43c49742eba5bc313eaf2f1e"
+
 react-native-navigation@2.0.0-experimental.252:
   version "2.0.0-experimental.252"
   resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.0-experimental.252.tgz#86a1846675287896e1b94cf25699b67092b40ab1"
