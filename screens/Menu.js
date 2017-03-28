@@ -11,6 +11,7 @@ const links = [
 
 class Menu extends Component {
   openAsModal = link => {
+    this.props.navigator.toggleDrawer();
     this.props.navigator.showModal({
       screen: "uber.Payment",
       title: link.label,
