@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 const links = [
@@ -9,25 +9,34 @@ const links = [
   {label: 'Asetukset'},
 ];
 
-const Menu = () => {
-  return (
-    <View>
-      <View style={styles.header}>
-        <View style={styles.avatar} />
-        <Text style={styles.name}>Henrik Raitasola</Text>
+class Menu extends Component {
+  openAsModal = link => {
+    this.props.navigator.showModal({
+      screen: "uber.Payment",
+      title: link.label,
+    });
+  }
+
+  render() {
+    return (
+      <View>
+        <View style={styles.header}>
+          <View style={styles.avatar} />
+          <Text style={styles.name}>Henrik Raitasola</Text>
+        </View>
+        <View style={styles.links}>
+          {links.map((link, index) => {
+            return (
+              <TouchableOpacity key={index} style={styles.link} onPress={() => this.openAsModal(link)}>
+                <Text style={styles.linkLabel}>{link.label}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
       </View>
-      <View style={styles.links}>
-        {links.map((link, index) => {
-          return (
-            <TouchableOpacity key={index} style={styles.link}>
-              <Text style={styles.linkLabel}>{link.label}</Text>
-            </TouchableOpacity>
-          );
-        })}
-      </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   header: {
