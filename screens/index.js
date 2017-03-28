@@ -8,7 +8,7 @@ const SecondTabScreen = () => <View><Text>seconds</Text></View>;
 const PushedScreen = () => <View><Text>push</Text></View>;
 
 export function registerScreens() {
-  Navigation.registerComponent('example.FirstTabScreen', () => FirstTabScreen);
-  Navigation.registerComponent('example.SecondTabScreen', () => SecondTabScreen);
+  Navigation.registerComponent('uber.MapScreen', () => FirstTabScreen);
+  Navigation.registerComponent('uber.menu', () => SecondTabScreen);
   Navigation.registerComponent('example.PushedScreen', () => PushedScreen);
 }
