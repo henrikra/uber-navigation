@@ -1,5 +1,19 @@
-import {AppRegistry} from 'react-native';
+import { Navigation } from 'react-native-navigation';
 
-import App from './src/components/App';
+import { registerScreens } from './screens';
+registerScreens();
 
-AppRegistry.registerComponent('uberNavigation', () => App);
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'uber.MapScreen',
+    navigatorStyle: {
+      navBarHidden: true,
+    }
+  },
+  drawer: {
+    left: {
+      screen: 'uber.menu',
+    },
+    disableOpenGesture: false,
+  },
+});
