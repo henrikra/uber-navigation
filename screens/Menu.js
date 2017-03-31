@@ -20,7 +20,7 @@ class Menu extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.avatar} />
           <Text style={styles.name}>Henrik Raitasola</Text>
@@ -40,6 +40,10 @@ class Menu extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#ffffff', 
+    flex: 1,
+  },
   header: {
     backgroundColor: '#000000',
     height: 100,
